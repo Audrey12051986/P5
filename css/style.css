@@ -203,16 +203,20 @@ header {
   object-position: center;
 }
 /* Code CSS en prévision de l'ajout d'un carousel pour la bannière */
+
 /* Gestion des fleches du carrousel */
 #banner .arrow {
   position: absolute;
+  z-index: 2;
 }
+
 #banner .arrow_left {
   left: 10px;
 }
 #banner .arrow_right {
   right: 10px;
 }
+
 /* Gestion des points du carrousel */
 .dots {
   position: absolute;
@@ -254,7 +258,7 @@ header {
   flex: 1;
 }
 #about-us li {
-  background: url("./images/tricolor-icon.png") no-repeat left top;
+  background: url("images/tricolor-icon.png") no-repeat left top;
   font-size: 16px;
   line-height: 26px;
   padding-left: 2em;
@@ -340,7 +344,7 @@ header {
 
 #contact h3 {
   margin-top: 0;
-  background: url("./images/tricolor-icon.png") no-repeat left top;
+  background: url("images/tricolor-icon.png") no-repeat left top;
   padding-left: 1.5em;
   width: 200px;
 }
