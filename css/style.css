@@ -208,13 +208,20 @@ header {
 #banner .arrow {
   position: absolute;
   z-index: 2;
+  background-color: transparent;
+  height: 60px;
+  width: 30px;
+  border: none;
+  background-size: cover;
 }
 
 #banner .arrow_left {
   left: 10px;
+  background-image: url("/images/arrow_left.png");
 }
 #banner .arrow_right {
   right: 10px;
+  background-image: url("/images/arrow_right.png");
 }
 
 /* Gestion des points du carrousel */
@@ -235,6 +242,7 @@ header {
 .dot_selected {
   background-color: #fff;
 }
+
 /* Fin du code CSS pour le carousel */
 #banner p {
   font-family: "Roboto Slab", sans-serif;
@@ -250,6 +258,9 @@ header {
   font-weight: 400;
   font-size: 30px;
 }
+
+/* Code CSS autres sections*/
+
 #about-us {
   display: flex;
 }
@@ -258,7 +269,7 @@ header {
   flex: 1;
 }
 #about-us li {
-  background: url("images/tricolor-icon.png") no-repeat left top;
+  background: url("/images/tricolor-icon.png") no-repeat left top;
   font-size: 16px;
   line-height: 26px;
   padding-left: 2em;
@@ -344,7 +355,7 @@ header {
 
 #contact h3 {
   margin-top: 0;
-  background: url("images/tricolor-icon.png") no-repeat left top;
+  background: url("/images/tricolor-icon.png") no-repeat left top;
   padding-left: 1.5em;
   width: 200px;
 }
