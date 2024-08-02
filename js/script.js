@@ -43,7 +43,8 @@ btnPrev.addEventListener("click", function () {
   moveBullets();
 });
 
-// 1 fonction Index
+// fonctions
+
 function moveCurrentIndex(isNext) {
   if (isNext === true) {
     currentIndex = currentIndex + 1;

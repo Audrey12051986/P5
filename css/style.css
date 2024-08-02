@@ -209,8 +209,8 @@ header {
   position: absolute;
   z-index: 2;
   background-color: transparent;
-  height: 60px;
-  width: 30px;
+  height: 70px;
+  width: 40px;
   border: none;
   background-size: cover;
 }
