@@ -207,25 +207,24 @@ header {
 /* Gestion des fleches du carrousel */
 #banner .arrow {
   position: absolute;
-  z-index: 999;
-  background-color: transparent;
-  height: 70px;
-  width: 40px;
+  background: none;
   border: none;
-  background-size: cover;
 }
 
 #banner .arrow:hover {
   cursor: pointer;
 }
 
-#banner .arrow_left {
+.arrow_left {
   left: 10px;
 }
 
-#banner .arrow_right {
+#next {
   right: 10px;
 }
+/*.arrow_right {
+  right: 20px;
+}*/
 
 /* Gestion des points du carrousel */
 .dots {
