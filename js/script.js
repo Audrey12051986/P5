@@ -2,7 +2,6 @@
 const btnPrev = document.getElementById("prev");
 const btnNext = document.getElementById("next");
 const dots = document.querySelectorAll(".dot");
-console.log(dots);
 const image = document.querySelector(".banner-img");
 const tagLine = document.querySelector("p");
 const slides = [
@@ -27,58 +26,56 @@ const slides = [
 
 let currentIndex = 0;
 
-btnNext.addEventListener("click", function () {
-  console.log(btnNext);
+// gestion du bouton suivant
+btnNext.addEventListener("click", () => {
   moveCurrentIndex(true);
   moveImage();
   moveTagLine();
   moveBullets();
 });
 
-btnPrev.addEventListener("click", function () {
-  console.log(btnPrev);
+// gestion du bouton précédent
+btnPrev.addEventListener("click", () => {
   moveCurrentIndex(false);
   moveImage();
   moveTagLine();
   moveBullets();
 });
 
-// fonctions
-
+// gestion des contraintes des flèches de direction
 function moveCurrentIndex(isNext) {
   if (isNext === true) {
-    currentIndex = currentIndex + 1;
+    currentIndex += 1;
     if (currentIndex >= slides.length) {
       currentIndex = 0;
     }
   } else {
-    currentIndex = currentIndex - 1;
+    currentIndex -= 1;
     if (currentIndex < 0) {
       currentIndex = slides.length - 1;
     }
   }
-
-  console.log(currentIndex, isNext);
 }
 
+// gestion du flux d'images
 function moveImage() {
   let img = slides[currentIndex];
-  console.log(document.getElementById("imageCaroussel").src);
-  console.log(img.image);
-  document.getElementById("imageCaroussel").src = img.image;
+
+  const imageCaroussel = document.getElementById("imageCaroussel");
+  if (imageCaroussel) {
+    imageCaroussel.src = img.image;
+  }
 }
 
+// gestion du roulement des bullets
 function moveBullets() {
-  //
-  for (let compteur = 0; compteur < 4; compteur = compteur + 1) {
-    console.log(dots[compteur]);
+  for (let compteur = 0; compteur < slides.length; compteur = compteur + 1) {
     dots[compteur].classList.remove("dot_selected");
   }
-  //
   dots[currentIndex].classList.add("dot_selected");
-  console.log(dots[currentIndex]);
 }
 
+// gestion du texte
 function moveTagLine() {
   let tag = slides[currentIndex].tagLine;
   tagLine.innerHTML = tag;

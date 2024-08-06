@@ -215,6 +215,10 @@ header {
   background-size: cover;
 }
 
+#banner .arrow:hover {
+  cursor: pointer;
+}
+
 #banner .arrow_left {
   left: 10px;
   background-image: url("/images/arrow_left.png");
