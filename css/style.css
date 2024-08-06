@@ -221,11 +221,10 @@ header {
 
 #banner .arrow_left {
   left: 10px;
-  background-image: url("images/arrow_left.png");
 }
+
 #banner .arrow_right {
   right: 10px;
-  background-image: url("images/arrow_right.png");
 }
 
 /* Gestion des points du carrousel */
