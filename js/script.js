@@ -26,7 +26,7 @@ const slides = [
 
 let currentIndex = 0;
 
-// gestion du bouton suivant
+// next button management
 btnNext.addEventListener("click", () => {
   moveCurrentIndex(true);
   moveImage();
@@ -34,7 +34,7 @@ btnNext.addEventListener("click", () => {
   moveBullets();
 });
 
-// gestion du bouton précédent
+// previous button management
 btnPrev.addEventListener("click", () => {
   moveCurrentIndex(false);
   moveImage();
@@ -42,7 +42,7 @@ btnPrev.addEventListener("click", () => {
   moveBullets();
 });
 
-// gestion des contraintes des flèches de direction
+// management of direction arrow constraints
 function moveCurrentIndex(isNext) {
   if (isNext === true) {
     currentIndex += 1;
@@ -57,7 +57,7 @@ function moveCurrentIndex(isNext) {
   }
 }
 
-// gestion du flux d'images
+//  image flow management
 function moveImage() {
   let img = slides[currentIndex];
 
@@ -67,7 +67,7 @@ function moveImage() {
   }
 }
 
-// gestion du roulement des bullets
+// bullet turnover management
 function moveBullets() {
   for (let compteur = 0; compteur < slides.length; compteur = compteur + 1) {
     dots[compteur].classList.remove("dot_selected");
@@ -75,7 +75,7 @@ function moveBullets() {
   dots[currentIndex].classList.add("dot_selected");
 }
 
-// gestion du texte
+// text turnover management
 function moveTagLine() {
   let tag = slides[currentIndex].tagLine;
   tagLine.innerHTML = tag;
