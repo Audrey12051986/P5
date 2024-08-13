@@ -1,7 +1,7 @@
 // Elements selection
 const btnPrev = document.getElementById("prev");
 const btnNext = document.getElementById("next");
-const dots = document.querySelectorAll(".dot");
+const dotsContainer = document.querySelector(".dots");
 const image = document.querySelector(".banner-img");
 const tagLine = document.querySelector("p");
 const slides = [
@@ -26,9 +26,25 @@ const slides = [
 
 let currentIndex = 0;
 
+// create bullet points
+function createDot(i) {
+  for (let i = 0; i < slides.length; i++) {
+    let dot = document.createElement("div");
+    dot.classList.add("dot");
+    dotsContainer.appendChild(dot);
+
+    if (i === 0) {
+      dot.classList.add("dot_selected");
+    }
+  }
+}
+createDot();
+
+const dots = document.querySelectorAll(".dot");
+
 // next button management
 btnNext.addEventListener("click", () => {
-  moveCurrentIndex(true);
+  moveCurrentIndex(1);
   moveImage();
   moveTagLine();
   moveBullets();
@@ -36,7 +52,7 @@ btnNext.addEventListener("click", () => {
 
 // previous button management
 btnPrev.addEventListener("click", () => {
-  moveCurrentIndex(false);
+  moveCurrentIndex(-1);
   moveImage();
   moveTagLine();
   moveBullets();
@@ -58,7 +74,7 @@ btnPrev.addEventListener("click", () => {
 }*/
 
 // Update management of direction arrow constraints
-function moveCurentIndex(step) {
+function moveCurrentIndex(step) {
   currentIndex += step;
   if (currentIndex === slides.length) {
     currentIndex = 0;
