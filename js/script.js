@@ -43,7 +43,7 @@ btnPrev.addEventListener("click", () => {
 });
 
 // management of direction arrow constraints
-function moveCurrentIndex(isNext) {
+/*function moveCurrentIndex(isNext) {
   if (isNext === true) {
     currentIndex += 1;
     if (currentIndex >= slides.length) {
@@ -54,6 +54,17 @@ function moveCurrentIndex(isNext) {
     if (currentIndex < 0) {
       currentIndex = slides.length - 1;
     }
+  }
+}*/
+
+// Update management of direction arrow constraints
+function moveCurentIndex(step) {
+  currentIndex += step;
+  if (currentIndex === slides.length) {
+    currentIndex = 0;
+  }
+  if (currentIndex < 0) {
+    currentIndex = slides.length - 1;
   }
 }
 
